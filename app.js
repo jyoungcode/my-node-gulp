@@ -7,6 +7,7 @@ var app = http.createServer(function(req, res){
 
 	router.home(req, res);
 	router.detail(req, res);
+	router.contact(req, res);
 });
 
 app.listen(3030,function(){

@@ -1,11 +1,14 @@
 var fs = require("fs");
+var renderer = require("./renderer");
 
 function home(req, res){
-	if(req.url == "/"){
-		fs.readFile("./layout/home.html", function(err, data){
-			res.write(data);
-			res.end();
-		});
+	if(req.url =="/"){
+	return renderer(req, res, "home", {});
+	}
+}
+function contact(req, res){
+	if (req.url == "/contact"){
+	return renderer(req, res, "contact", {});
 	}
 }
 
@@ -18,5 +21,6 @@ function detail(req, res){
 }
 
 	module.exports.home = home;
+	module.exports.contact = contact;
 	module.exports.detail = detail;
 
